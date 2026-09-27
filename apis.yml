@@ -1,23 +1,62 @@
 aid: bedrock-energy
+
 name: Bedrock Energy
-description: 'Bedrock Energy is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Bedrock Energy provides innovative geothermal heating and cooling solutions for residential and commercial properties. Leveraging proprietary drilling technology and advanced data algorithms, the company enables fast, cost-effective borehole installations that deliver high-efficiency, resilient energy performance. Their mission is to make geothermal energy affordable and accessible, reducing energy costs and environmental impact for building owners across the United States.'
+
 url: https://raw.githubusercontent.com/api-evangelist/bedrock-energy/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Geothermal
+- Energy
+- HVAC
+- CleanTech
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/bedrock-energy-hosts.yml
+- type: PrivacyPolicy
+  url: https://bedrockenergy.com/privacy-policy/
+- type: DomainSecurity
+  url: security/bedrock-energy-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://bedrockenergy.com
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: OpenAPI spec endpoints returned 404 on both primary hosts.
+  evidence:
+    - url: https://bedrockenergy.com/openapi.json
+      status: 404
+    - url: https://api.bedrockenergy.com/openapi.json
+      status: 404
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
